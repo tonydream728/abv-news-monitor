@@ -1,0 +1,36 @@
+name: 24/7 餐飲業新聞自動監控
+
+on:
+  schedule:
+    # 每天台灣時間上午 09:00 自動執行 (UTC 01:00)
+    - cron: '0 1 * * *'
+  workflow_dispatch: # 允許您隨時點擊按鈕手動強制更新
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 檢查程式碼庫
+      uses: actions/checkout@v3
+
+    - name: 設定 Python 環境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 安裝必要套件
+      run: |
+        pip install requests
+
+    - name: 執行 AI Agent 新聞搜集
+      run: python fetch_news.py
+
+    - name: 自動提交並推送到分支
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add news.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新今日餐飲新聞" && git push)
