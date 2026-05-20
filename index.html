@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐飲業監控摘要 - 每日情報</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; }
+        .card { background-color: #161b22; border: 1px solid #30363d; }
+        .btn-active { background-color: #21262d; border-color: #8b949e; color: #ffffff; }
+    </style>
+</head>
+<body class="p-6 md:p-12 font-sans">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-white mb-2">餐飲業監控摘要</h1>
+                <p class="text-gray-400">每日行銷、優惠、招募、財報與 AI 應用動態</p>
+            </div>
+            <div class="text-sm text-gray-500" id="update-time">最後更新：載入中...</div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="card p-6 rounded-xl text-center">
+                <div class="text-gray-400 text-sm mb-2">監控主題</div>
+                <div class="text-4xl font-bold text-blue-400">10</div>
+                <div class="text-xs text-gray-500 mt-2">可篩選的主題類別</div>
+            </div>
+            <div class="card p-6 rounded-xl text-center">
+                <div class="text-gray-400 text-sm mb-2">今日新聞 (<span class="today-date">--/--</span>)</div>
+                <div class="text-4xl font-bold text-green-400" id="news-count">0</div>
+                <div class="text-xs text-gray-500 mt-2">來自各大媒體</div>
+            </div>
+            <div class="card p-6 rounded-xl text-center">
+                <div class="text-gray-400 text-sm mb-2">排程頻率</div>
+                <div class="text-4xl font-bold text-purple-400">每日</div>
+                <div class="text-xs text-gray-500 mt-2">上午 9:00 自動更新</div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-sm font-semibold text-gray-400 mb-3">按主題篩選</h3>
+            <div class="flex flex-wrap gap-2" id="category-filters">
+                <button class="btn-active px-4 py-2 rounded-full text-sm border border-gray-600 transition" onclick="filterCategory('全部')">全部主題 <span id="count-all">0</span></button>
+                <button class="px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition" onclick="filterCategory('行銷活動')">行銷活動 <span id="count-行銷">0</span></button>
+                <button class="px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition" onclick="filterCategory('優惠活動')">優惠活動 <span id="count-優惠">0</span></button>
+                <button class="px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition" onclick="filterCategory('人才招募')">人才招募 <span id="count-招募">0</span></button>
+                <button class="px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition" onclick="filterCategory('營收表現')">營收表現 <span id="count-營收">0</span></button>
+                <button class="px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition" onclick="filterCategory('海外發展')">海外發展 <span id="count-海外">0</span></button>
+                <button class="px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition" onclick="filterCategory('體育賽事合作')">體育賽事合作 <span id="count-體育">0</span></button>
+            </div>
+        </div>
+
+        <div class="space-y-4" id="news-container">
+            <div class="text-center py-12 text-gray-500">正在加載今日餐飲業市場情報...</div>
+        </div>
+    </div>
+
+    <script>
+        let allNews = [];
+        const today = new Date();
+        document.querySelectorAll('.today-date').forEach(el => el.innerText = `${today.getMonth()+1}/${today.getDate()}`);
+
+        // 預設靜態展示資料 (確保一開始網頁不會空空的)
+        const demoData = {
+            "last_updated": "2026-05-20 09:30:00",
+            "news": [
+                {
+                    "category": "海外發展",
+                    "title": "中台灣三大餐飲集團加速海外布局 鼎王、春水堂、成真咖啡積極拓點",
+                    "source": "工商時報",
+                    "time": "2026-05-20",
+                    "summary": "面對內需市場競爭，台灣頂尖餐飲集團紛紛加快海外展店腳步，鎖定美國與東南亞市場，尋求全球化發展的新成長動能。",
+                    "url": "#"
+                },
+                {
+                    "category": "行銷活動",
+                    "title": "結合體驗行銷！餐飲業最新調查：配套升級成抗漲破局關鍵",
+                    "source": "市場趨勢日報",
+                    "time": "2026-05-20",
+                    "summary": "最新餐飲洞察報告顯示，導入主題菜單與深入地方飲食文化的餐酒館，在社群情緒上表現更佳，精緻搭餐模式成為主流。",
+                    "url": "#"
+                }
+            ]
+        };
+
+        // 嘗試讀取動態生成的 json，如果還沒有就用預設資料
+        fetch('news.json')
+            .then(res => res.json())
+            .then(data => {
+                allNews = data.news || [];
+                document.getElementById('update-time').innerText = `最後更新：${data.last_updated || '剛剛'}`;
+                initDashboard();
+            })
+            .catch(err => {
+                allNews = demoData.news;
+                document.getElementById('update-time').innerText = `預覽模式 (等待明日 09:00 排程啟動)`;
+                initDashboard();
+            });
+
+        function initDashboard() {
+            document.getElementById('news-count').innerText = allNews.length;
+            updateCounts();
+            renderNews('全部');
+        }
+
+        function updateCounts() {
+            document.getElementById('count-all').innerText = allNews.length;
+            ['行銷活動', '優惠活動', '人才招募', '營收表現', '海外發展', '體育賽事合作'].forEach(cat => {
+                const count = allNews.filter(n => n.category === cat).length;
+                const shortKey = cat.substring(0,2);
+                const el = document.getElementById(`count-${shortKey}`);
+                if(el) el.innerText = count;
+            });
+        }
+
+        function renderNews(category) {
+            const container = document.getElementById('news-container');
+            const filtered = category === '全部' ? allNews : allNews.filter(n => n.category === category);
+            
+            if(filtered.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-gray-500">此分類今日暫無相關新聞。</div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="card p-6 rounded-xl hover:bg-[#1f242c] transition">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="bg-blue-900 text-blue-200 text-xs px-2.5 py-1 rounded-full font-medium">${item.category}</span>
+                        <span class="text-xs text-gray-500">${item.source} · ${item.time}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">${item.title}</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">${item.summary}</p>
+                </div>
+            `).join('');
+        }
+
+        function filterCategory(cat) {
+            const buttons = document.querySelectorAll('#category-filters button');
+            buttons.forEach(btn => {
+                if(btn.innerText.includes(cat)) btn.className = "btn-active px-4 py-2 rounded-full text-sm border border-gray-600 transition";
+                else btn.className = "px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-gray-500 transition";
+            });
+            renderNews(cat);
+        }
+    </script>
+</body>
+</html>
