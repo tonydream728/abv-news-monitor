@@ -5,10 +5,9 @@ import json
 from datetime import datetime
 import google.generativeai as genai
 
-# 設定 Gemini AI (自動讀取 GitHub Actions 後台的密鑰)
+# 設定 Gemini AI
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# 8大主題關鍵字與設定
 THEMES = {
     1: {"title": "1. 啤酒節與酒類活動", "sub_categories": ["台灣／海外啤酒節", "精釀啤酒活動", "品飲會", "酒吧活動", "啤酒品牌聯名", "餐廳與酒類合作"], "query": "啤酒節 OR 精釀啤酒活動 OR 品酒會 OR 酒吧活動 OR 啤酒聯名"},
     2: {"title": "2. 即時行銷議題", "sub_categories": ["節慶話題", "體育賽事", "社群熱門事件", "地區型活動", "旅遊／美食新聞", "可轉化為餐廳活動的話題"], "query": "餐飲 節慶話題 OR 運動賽事 餐廳 OR 餐廳 熱門事件 OR 美食新聞"},
@@ -25,7 +24,6 @@ def main():
     raw_articles = []
     seen_urls = set()
 
-    # 1. 抓取新聞 (透過 Google News RSS 機制免 API Key)
     for tid, meta in THEMES.items():
         url = f"https://news.google.com/rss/search?q={meta['query']}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
         try:
@@ -45,7 +43,7 @@ def main():
         except Exception as e:
             print(f"主題 {tid} 抓取失敗: {e}")
 
-    print(f"🧠 AI 特助開始進行『ABV 實戰轉化率』過濾與 8 大主題重組...")
+    print(f"🧠 AI 特助開始進行『ABV 實戰轉化率』過濾...")
     
     structured_themes = []
     for tid, meta in THEMES.items():
@@ -57,7 +55,7 @@ def main():
             "articles": []
         })
 
-    # 🎯 這裡已經幫您無縫升級為 Google 最新一代的 gemini-2.5-flash 大腦！
+    # 對接 2026 年最新一代主力大腦
     model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt_template = """
@@ -80,7 +78,6 @@ def main():
     }
     """
 
-    # 篩選最關聯的新聞請 AI 深化剖析
     for art in raw_articles[:12]: 
         try:
             tid = art["theme_id"]
@@ -106,7 +103,6 @@ def main():
         except Exception as e:
             print(f"AI 剖析失敗: {e}")
 
-    # 輸出資料到專案目錄中
     os.makedirs('data', exist_ok=True)
     with open('data/daily_report.json', 'w', encoding='utf-8') as f:
         json.dump({"themes": structured_themes}, f, ensure_ascii=False, indent=4)
