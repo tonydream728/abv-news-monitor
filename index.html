@@ -25,44 +25,32 @@
                 </p>
             </div>
             <div class="text-xs text-amber-400 bg-amber-950/40 border border-amber-500/30 px-3 py-1.5 rounded-lg font-mono" id="data-status">
-                24/7 Autopilot Engine V2.0
+                正在讀取決策情報大腦...
             </div>
         </header>
 
         <div class="space-y-4" id="theme-dashboard">
-            <div class="text-center py-20 text-gray-500">正在啟動 ABV 決策情報大腦...</div>
-        </div>
+            </div>
     </div>
 
     <script>
+        // 1. 完整 8 大核心備用資料 (確保無論如何都不會空白)
         const demoData = {
             "themes": [
-                {
-                    "id": 1,
-                    "title": "1. 啤酒節與酒類活動",
-                    "sub_categories": ["台灣／海外啤酒節", "精釀啤酒活動", "品飲會", "酒吧活動", "啤酒品牌聯名", "餐廳與酒類合作"],
-                    "news_count": 1,
-                    "articles": [
-                        {
-                            "sub_tag": "精釀啤酒活動",
-                            "title": "2026 國際精釀啤酒巡迴賽台北站即將開跑，引進50款罕見歐洲修道院啤酒",
-                            "source": "酒訊雜誌",
-                            "score": 5,
-                            "summary": "歐洲精釀大廠聯合將於下月在華山舉辦封閉式品飲會，主打高濃度、傳統工藝的修道院與酸啤風格。",
-                            "action_tags": ["門市活動", "品牌合作", "美食季企劃"],
-                            "abv_suggestion": "ABV 作為精釀啤酒領導品牌，可主動接洽主辦方爭取「官方指定續攤酒吧」，或在門市同步推出「修道院啤酒對決週」，完美轉化為門市營收。"
-                        }
-                    ]
-                }
+                {"id": 1, "title": "1. 啤酒節與酒類活動", "sub_categories": ["台灣／海外啤酒節", "精釀啤酒活動", "品飲會", "酒吧活動"], "news_count": 1, "articles": [{"sub_tag": "精釀啤酒活動", "title": "2026 國際精釀啤酒巡迴賽台北站即將開跑", "source": "酒訊雜誌", "score": 5, "summary": "歐洲精釀大廠聯合將於下月在華山舉辦封閉式品飲會，主打高濃度、傳統工藝的修道院與酸啤風格。", "action_tags": ["門市活動", "品牌合作"], "abv_suggestion": "ABV 可主動接洽主辦方爭取「官方指定續攤酒吧」，或在門市同步推出「修道院啤酒對決週」，完美轉化為門市營收。"}]},
+                {"id": 2, "title": "2. 即時行銷議題", "sub_categories": ["節慶話題", "體育賽事", "社群熱門事件"], "news_count": 1, "articles": [{"sub_tag": "體育賽事", "title": "大巨蛋週末台日棒球交流賽，周邊餐廳夜間訂位率已達95%", "source": "東森財經", "score": 5, "summary": "賽事帶動周邊餐飲爆發，球迷傾向尋找有大螢幕觀賽、可高分貝應援的餐酒館聚餐。", "action_tags": ["即時行銷", "門市活動"], "abv_suggestion": "應立刻在 ABV 東區及各分店推播「憑大巨蛋票根享指定點心招待」或「全壘打舉杯同慶」活動，攔截賽後人流。"}]},
+                {"id": 3, "title": "3. 精釀啤酒市場", "sub_categories": ["精釀啤酒品牌動態", "新酒款上市", "酒廠合作"], "news_count": 0, "articles": []},
+                {"id": 4, "title": "4. 餐飲會員經濟", "sub_categories": ["會員制度", "點數經濟", "CRM / OMO 案例"], "news_count": 0, "articles": []},
+                {"id": 5, "title": "5. LINE會員與 Ocard", "sub_categories": ["LINE官方帳號", "Ocard會員系統", "推播策略"], "news_count": 0, "articles": []},
+                {"id": 6, "title": "6. 世界盃與大型賽事餐飲話題", "sub_categories": ["世界盃餐廳活動", "運動酒吧", "賽事轉播"], "news_count": 0, "articles": []},
+                {"id": 7, "title": "7. 社群爆紅餐廳與內容趨勢", "sub_categories": ["Threads熱門話題", "TikTok爆紅料理", "IG Reels"], "news_count": 1, "articles": [{"sub_tag": "Threads熱門話題", "title": "Threads 網友熱議：『求台北適合10人以上、不吃牛羊但聚餐氣氛嗨的餐酒館』單篇脆文破萬觸及", "source": "Threads 輿情監測", "score": 5, "summary": "大量脆友在貼文底下尋找多人分享、不吃牛羊的多元菜單與喝酒氛圍餐廳。", "action_tags": ["社群內容", "廣告素材"], "abv_suggestion": "旗下地中海、加勒比海、美式等分店完全外包命中。小編應立刻在該串文底下用官方帳號回覆，並將此不吃牛羊的多人聚餐特色包裝成 Meta 廣告素材。"}]},
+                {"id": 8, "title": "8. 餐飲 AI 應用", "sub_categories": ["AI點餐", "AI客服", "AI自動生成社群內容"], "news_count": 0, "articles": []}
             ]
         };
 
+        // 2. 渲染核心
         function renderDashboard(data) {
             const container = document.getElementById('theme-dashboard');
-            if(!data || !data.themes) {
-                container.innerHTML = `<div class="text-center py-10 text-gray-500">暫無即時數據，正在讀取備用大腦...</div>`;
-                return;
-            }
             container.innerHTML = data.themes.map(theme => {
                 const hasNews = theme.articles && theme.articles.length > 0;
                 return `
@@ -74,9 +62,6 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                                     </svg>
                                     <h3 class="text-lg font-bold text-white">\${theme.title}</h3>
-                                    <span class="text-xs text-gray-500 hidden md:inline-block truncate max-w-sm ml-2">
-                                        (\${theme.sub_categories.slice(0, 3).join(' / ')}...)
-                                    </span>
                                 </div>
                                 <div>
                                     \${hasNews 
@@ -93,48 +78,10 @@
                                 \${hasNews ? theme.articles.map(art => `
                                     <div class="bg-[#161b22] border border-[#30363d] p-5 rounded-xl space-y-3">
                                         <div class="flex flex-wrap justify-between items-start gap-2">
-                                            <div class="flex items-center gap-2">
-                                                <span class="bg-blue-950 text-blue-300 text-xs px-2.5 py-0.5 rounded border border-blue-500/20 font-bold"># \${art.sub_tag}</span>
-                                                <span class="text-xs text-gray-500">\${art.source}</span>
-                                            </div>
+                                            <span class="bg-blue-950 text-blue-300 text-xs px-2.5 py-0.5 rounded border border-blue-500/20 font-bold"># \${art.sub_tag}</span>
                                             <span class="text-xs text-amber-400">決策優先度：★ \${art.score}</span>
                                         </div>
-                                        <h4 class="text-md font-bold text-white hover:underline">
-                                            <a href="\${art.url}" target="_blank">\${art.title} ↗</a>
-                                        </h4>
+                                        <h4 class="text-md font-bold text-white hover:underline"><a href="\${art.url}" target="_blank">\${art.title} ↗</a></h4>
                                         <p class="text-sm text-gray-400 leading-relaxed">\${art.summary}</p>
                                         <div class="mt-4 p-4 bg-[#0d1117] rounded-lg border-l-2 border-l-amber-500 border-y border-r border-[#21262d]">
-                                            <div class="flex flex-wrap gap-1.5 mb-2 items-center">
-                                                <span class="text-xs font-bold text-amber-400 mr-1">⚡ 可轉化為：</span>
-                                                \${art.action_tags.map(tag => `<span class="bg-amber-950/60 text-amber-300 text-xs px-2 py-0.5 rounded font-medium border border-amber-500/20">\${tag}</span>`).join('')}
-                                            </div>
-                                            <p class="text-xs text-gray-300 leading-relaxed"><strong class="text-white">實戰行動方針：</strong>\${art.abv_suggestion}</p>
-                                        </div>
-                                    </div>
-                                `).join('') : `
-                                    <div class="text-center py-6 text-sm text-gray-600">Agent 今日已掃描此主題，未發現具備 ABV 實戰轉化價值的新聞。</div>
-                                `}
-                            </div>
-                        </details>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // 使用極短的相對路徑讀取，確保任何環境都不會 404
-        fetch('daily_report.json')
-            .then(res => {
-                if(!res.ok) throw new Error('找不到即時資料');
-                return res.json();
-            })
-            .then(data => {
-                document.getElementById('data-status').innerText = "LIVE: 雲端即時同步中";
-                renderDashboard(data);
-            })
-            .catch(err => {
-                document.getElementById('data-status').innerText = "PREVIEW: 範例預覽模式";
-                renderDashboard(demoData);
-            });
-    </script>
-</body>
-</html>
+                                            <div class="flex flex-wrap gap-1.5 mb-2 items
