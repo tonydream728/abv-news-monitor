@@ -11,8 +11,50 @@
                 "啤酒品牌聯名",
                 "餐廳與酒類合作"
             ],
-            "news_count": 0,
-            "articles": []
+            "news_count": 3,
+            "articles": [
+                {
+                    "sub_tag": "台灣啤酒節",
+                    "title": "2026高雄啤酒節7/3~7/5登場！子瑜、RAIN、藝聲、RIIZE…共6組韓星登台！售票時間、演出卡司一次看",
+                    "source": "Yahoo新聞",
+                    "url": "https://news.google.com/rss/articles/CBMigwRBVV95cUxPT3k0c0Z0dHdZVEg2aFBZNjBQQkgwVnNsRTZ6QmhvMGVtTlBMUWJoQUxMMU1LcVB6VVM2OFZJdVJpSUlaV184WDdmbDNzUEdIS2lETHpJTERTYThnN3ZScEMxekJBZWNidldIQUNFZEZ5M2FFRy1MbjBqNElTcDJkY283c09Rd3NCM29sckJNeVV4WWF2dGo0UU1vT21aQjVrT1ZFZXNuV2p1TkQ2US1yNVd0VEtKbTFyVzF2QW5OamRCLVk3UnU4eWo5SlRFMV9KaVRNUV84ZENTazdzMkhlNG9yZGFseVk2N1RjZWViWlhhWDBJUkh2OGdKNjVhRU9uSUs3T08xOHpaM0dCSkdDU2hhUHozT3NDVGpQLThoVENXbUJEZmZiZlVwck1IMUZ0S1ZpRmU1RWhfVXhUcWxteEFPaGRiVlpRdXh6OHdvYUpRLWFXTVZyX1M0SklHUFdFclNJMVVDMDF1UHZZUmhQUEEtNzFfak92NXhfazZyaWlBVEhPcXZQSUVLZWVHNDZmVnhERlRpRGhialdTYTFLN2dVY2JQLVJmT0ZITXNfaFpCUGIzVjVoZF9UYnJQaldJRGhSZDMtSlU0ZGFQTmlEODVjbEw2VUgtdmE1NmNNWHBEdFJoNE0yV01GYXEwaTI5Ni05VU53bERwQmRKeURydndvbw?oc=5",
+                    "score": 4,
+                    "summary": "2026高雄啤酒節匯聚K-pop巨星，為ABV提供絕佳社群話題與行銷連結點。可提前規劃門市活動、會員優惠及特色餐點，搶攻大量啤酒與K-pop客群。",
+                    "action_tags": [
+                        "即時行銷",
+                        "會員活動",
+                        "社群內容",
+                        "廣告素材",
+                        "門市活動",
+                        "美食季企劃"
+                    ],
+                    "abv_suggestion": "ABV可立即在社群平台（如Threads、IG、FB）發起「2026高雄啤酒節誰是你的K-pop神主牌？來看ABV配哪款精釀啤酒最對味！」互動話題，增加粉絲參與。在Ocard或門市規劃「憑2026高雄啤酒節票根，ABV全台分店消費享餐點9折、啤酒95折優惠」活動（活動期間可設定在啤酒節前後）。更可提前在2026年Q2推出「K-Pop狂想曲」美食季，尤其在ABV韓式烤肉店推出限定韓式餐酒套餐，吸引K-pop與啤酒愛好者。廣告素材可結合K-pop活力氛圍與ABV精釀啤酒，主打「演唱會後，來ABV續攤開喝！」"
+                },
+                {
+                    "sub_tag": "台灣啤酒節",
+                    "title": "2026高雄啤酒音樂節7/3-7/5！周子瑜、Rain、玖壹壹、啦啦隊見面會...完整卡司、活動時間、門票、節目表",
+                    "source": "今周刊",
+                    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOcWFNTXY5UTYtZ0h0ZjVlOU5uWmpTalJlX2ZNeDg2UFRmSUZLS2c1WGZORzJPWjdGQlp5X3VTZjRNMEcwR01rTjY0QUFDS1hNSGNUVFVFUUNKby15cXplcXFDVDNvZWM3NXpMMU0zTWkwZ2JXTlhra05RTTNlb2dKcw?oc=5",
+                    "score": 1,
+                    "summary": "2026高雄啤酒音樂節公告，時間遙遠，對ABV目前即時行銷、社群操作、門市活動皆不具實質轉化價值，僅供長期規劃參考。",
+                    "action_tags": [
+                        "社群內容"
+                    ],
+                    "abv_suggestion": "「2026年」資訊過於遙遠，不建議進行任何即時行銷或門市活動。社群小編可考慮發佈一篇「超前部署」趣味貼文，如「2026年高雄啤酒音樂節卡司曝光，ABV小編已在行事曆畫重點，期待兩年後與你在啤酒節相見！」但需注意互動與熱度恐不高。主要價值在於將此資訊納入ABV長期品牌合作與潛在市場拓展的評估清單。"
+                },
+                {
+                    "sub_tag": "品飲會",
+                    "title": "頂級威士忌品酒會現畫廊 謝義錩限量藝術酒標吸引藏家爭相收藏",
+                    "source": "富比士地產王",
+                    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQd1BpeXJ6ZUcxemZqWWVjdl9SY2ZzU2Y3MlJ2cXhlUGhDNHdONmN3ODllTXBuUHhYNnptSDg0Rks1VEpySmllS2Y2cjdGSWstVC1rQ0lEQ3Y5bThNS2NfcXNnaG1fVERSY1dHNm9sN25ILUlWaU1kRHVsYW84aVRMcTd4QTBVNW9SZmNQZUs3UlZoRmk4RU83VFZB?oc=5",
+                    "score": 2,
+                    "summary": "新聞報導頂級威士忌品酒會展示藝術酒標吸引藏家。ABV主打精釀啤酒與世界料理，兩者屬不同酒類與客群，直接轉化價值低。核心為威士忌與藝術品，非ABV精釀啤酒。",
+                    "action_tags": [
+                        "社群內容"
+                    ],
+                    "abv_suggestion": "ABV可在社群媒體上發起「啤酒瓶身也是藝術品！」的互動話題，邀請顧客分享自己最喜歡的精釀啤酒標籤設計。藉此機會推廣ABV旗下各國精釀啤酒品牌獨特的視覺設計，強化品牌對精釀啤酒文化的深耕，但應避免直接提及威士忌或收藏品市場，以保持品牌焦點。"
+                }
+            ]
         },
         {
             "id": 2,
@@ -38,8 +80,55 @@
                 "啤酒風味趨勢",
                 "消費者喝酒習慣"
             ],
-            "news_count": 0,
-            "articles": []
+            "news_count": 3,
+            "articles": [
+                {
+                    "sub_tag": "精釀啤酒品牌動態",
+                    "title": "美國精釀啤酒品牌創辦人訪真理大學暢談人資管理實務- 新消息- Campus",
+                    "source": "中時新聞網",
+                    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5ackhYb3V5Wm9vNHJGMjVILVNHUDZqTC1Fc0ZTYkY0eVBvbmpIYkRWTzRQR0VOMGJVLV9rdTdzd185OGdDcTNabkNnQmhWUVA3blFvejF0U0VvWV93VVZkYnplRU5pQQ?oc=5",
+                    "score": 2,
+                    "summary": "美國精釀啤酒品牌創辦人訪台暢談人資管理。新聞主題非關啤酒品飲或文化，對ABV餐廳集團的消費者行銷轉化價值極低。",
+                    "action_tags": [
+                        "社群內容"
+                    ],
+                    "abv_suggestion": "此新聞對ABV的即時行銷或高價值轉化操作空間極小。若ABV確實有販售該美國精釀啤酒品牌，社群小編可勉強發布一篇輕度社群內容，提及『優質精釀啤酒除了釀造技術，背後也需卓越團隊支持！如同今日某品牌創辦人訪台分享人資管理。想品嚐這份團隊精神的結晶？ABV有提供喔！』但預期消費者互動率與實質轉化效果將非常有限。"
+                },
+                {
+                    "sub_tag": "啤酒風味趨勢",
+                    "title": "2022 台味啤酒趨勢！20 個你該認識的台灣在地精釀啤酒品牌",
+                    "source": "GQ Taiwan",
+                    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZjFndmZscnJuTk96MVhpdG5taGlKQzZrNGJTdXRORWk5OXY5aWMtRkQ3bnRUX0R2TWlXQVQ1bjZEd2xscC04WVlwandRNFpqWF84M1QzYjFDTUlOZHJHUHcwTDQtR3FUckxFazNsYV9rMVVxYmpSRHJPTEVLWHVhNjBBbWpEOW9lN2ZQY3lXdU1rZFFSc19mdEFlM0hZZ0o4Sy0yQkZWMURRV09HeEE0d0V3M1lPYzdWcFFSbVJsQWlSbjA?oc=5",
+                    "score": 5,
+                    "summary": "新聞點名20個台灣精釀啤酒品牌與台味趨勢，與ABV推廣世界精釀啤酒文化不謀而合，提供豐富的在地化內容與合作機會。",
+                    "action_tags": [
+                        "即時行銷",
+                        "會員活動",
+                        "社群內容",
+                        "廣告素材",
+                        "門市活動",
+                        "品牌合作",
+                        "美食季企劃"
+                    ],
+                    "abv_suggestion": "ABV可立即規劃「台灣精釀啤酒季」或「台味精釀巡禮」主題活動，門市設置專屬推薦區，並推出3-4款「台灣精釀啤酒飛行組合」。社群小編可在Threads或IG發起「你最愛的台味精釀啤酒是哪款？」投票，或每日介紹新聞中一家品牌及其與ABV無牛羊料理的搭配。Ocard可針對會員推出「台灣精釀啤酒集點贈好禮」或專屬折扣。高潛力品牌可洽談Tap Takeover或聯名餐酒會，拓展在地品牌合作。"
+                },
+                {
+                    "sub_tag": "酒廠合作",
+                    "title": "海大與酒廠合作推出70週年校慶紀念酒",
+                    "source": "matsu-news.gov.tw",
+                    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE03T29WSS0zeDduSGNLME9XRWlBTTV2TW9GS0Y1TS1tSUVTdlI1TzdkbmdfQ09ZU28zMFNLdjVSLXg5OWl2c0pEUnR1dWJ5VzVEMFZrZlEtVHVZdHFwOXc?oc=5",
+                    "score": 4,
+                    "summary": "海大攜手酒廠推出70週年校慶紀念酒，顯示品牌與地方結合的精釀啤酒新動態，適合ABV作為啤酒文化推廣題材。",
+                    "action_tags": [
+                        "即時行銷",
+                        "社群內容",
+                        "門市活動",
+                        "會員活動",
+                        "品牌合作"
+                    ],
+                    "abv_suggestion": "社群小編可於Threads/IG/FB發文：「海大出校慶紀念酒了！你覺得下一款校園聯名精釀會是什麼風味？ABV 嚴選世界各地與台灣在地精釀，帶你品嚐無限創意！」；門市可推出「ABV在地精釀啤酒節」或「職人系列精釀」促銷，連結此新聞熱點，同時在Ocard推出會員任務，回答「最期待哪間大學與精釀酒廠合作？」獲點數或優惠。"
+                }
+            ]
         },
         {
             "id": 4,
@@ -52,8 +141,58 @@
                 "集點活動",
                 "CRM / OMO 案例"
             ],
-            "news_count": 0,
-            "articles": []
+            "news_count": 3,
+            "articles": [
+                {
+                    "sub_tag": "點數經濟",
+                    "title": "LINE Pay跨界餐飲 攜手inline推智慧訂位支付",
+                    "source": "壹蘋新聞網",
+                    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNU0dQX29GTTQwb1VpVnN3WFpFZTVDMzJhbWo3clFPTDBmOHYtd3dUZVpQaDBIMFpjcDk2MzFZc1pSWTBlR1JtT0JkbWwwNUo1dUlFbXpGbkxDMFBndm5hU0tpQnVSVU9TMGhjdzVkLXhwWW1IeEd4bThwNnVjemxVbEdLZw?oc=5",
+                    "score": 5,
+                    "summary": "LINE Pay攜手inline打造智能訂位支付，ABV可善用點數經濟、會員活動，強化線上線下整合行銷。",
+                    "action_tags": [
+                        "即時行銷",
+                        "會員活動",
+                        "社群內容",
+                        "廣告素材",
+                        "門市活動",
+                        "品牌合作"
+                    ],
+                    "abv_suggestion": "ABV應立即與inline和LINE Pay窗口洽詢合作方案，例如推出「透過inline預訂ABV任一門店並以LINE Pay結帳，即享LINE Points 5%回饋或專屬飲品優惠」活動。同時，可在各社群平台（FB/IG/Threads）製作「預約ABV，一點搞定」懶人包，教導顧客如何利用新功能快速訂位與支付，並在門市張貼相關活動海報，鼓勵顧客體驗，強化ABV的數位服務力與品牌形象。"
+                },
+                {
+                    "sub_tag": "CRM / OMO 案例",
+                    "title": "餐飲零售業的AI應用與挑戰：數據驅動的轉型契機",
+                    "source": "Nextlink 博弘雲端科技",
+                    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ3g0VHhSU0MxTXFxeFh5NlFQVzZRSndHOWJxekh2TnhlQTZRdk9xdV96V2MtRHJWWmg3Q0pETXFwWjFWX2tvNGRVcXhGaGpfcUFNZFgyR2lFUDJDc2FWNGFBS1BGeTBPVEVVeE5jQS1FUF9DZ0hGYkhFQm4xTXRwdnZwaUduUGM?oc=5",
+                    "score": 4,
+                    "summary": "餐飲業AI應用趨勢強調數據驅動轉型。ABV可利用AI分析顧客偏好，優化會員行銷與OMO體驗，提升營運效率與客製化服務。",
+                    "action_tags": [
+                        "即時行銷",
+                        "會員活動",
+                        "社群內容",
+                        "廣告素材"
+                    ],
+                    "abv_suggestion": "ABV小編可將「AI應用」轉化為品牌故事與互動。例如，在Threads或Instagram發起話題：「如果AI能為你推薦ABV的完美餐酒組合，你會期待它怎麼推薦？」，藉此蒐集顧客偏好，為未來的AI導入做準備，同時展現品牌對創新的關注。針對會員，可在Ocard活動中推出「數據精選推薦」專區，以「ABV根據您的歷史消費，精選推薦專屬啤酒搭餐」為名義，推送個人化優惠券或私訊，並考量不吃牛羊等特殊偏好，提升會員互動與轉化潛力。"
+                },
+                {
+                    "sub_tag": "CRM / OMO 案例",
+                    "title": "餐飲業數位轉型潮來臨，一次看懂台灣餐飲數位科技｜職場新訊（附熱門相關職缺）",
+                    "source": "104職場力",
+                    "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1kTkdNX1pSbXBmYXJtVXNCc0NaMmlFc2JEa3JMUHNhU0d5Q0o0aTI3Vk9TalZzanZNOEJ1ZjZVZml6a1g3OUE?oc=5",
+                    "score": 4,
+                    "summary": "新聞揭示餐飲數位轉型趨勢。ABV可運用科技優化會員體驗、門市效率、創造OMO行銷新模式，提升品牌競爭力。",
+                    "action_tags": [
+                        "即時行銷",
+                        "會員活動",
+                        "社群內容",
+                        "廣告素材",
+                        "門市活動",
+                        "品牌合作"
+                    ],
+                    "abv_suggestion": "社群小編可在 Threads/IG/FB 發文：「餐飲業數位轉型正夯！ABV也沒缺席！你可能不知道，你每次輕鬆的線上訂位、順暢的QR Code點餐，背後都藏著我們為你優化的數位科技！快來體驗ABV的『智慧餐飲』，享受更便利的啤酒美食之旅！#ABV數位美食家 #智能點餐 #我的ABV生活」。另可在Ocard或官方APP推播『體驗數位升級，享會員限定優惠』通知，鼓勵會員使用線上點餐或預約功能，首次使用者可贈送啤酒兌換券一張。門市可張貼QR Code引導註冊會員或線上點餐，並搭配新註冊會員贈送小點心。"
+                }
+            ]
         },
         {
             "id": 5,
@@ -65,8 +204,33 @@
                 "推播策略",
                 "會員導流案例"
             ],
-            "news_count": 0,
-            "articles": []
+            "news_count": 2,
+            "articles": [
+                {
+                    "sub_tag": "LINE官方帳號",
+                    "title": "【AI藍圖8大方向首度公開】LINE如何轉型成一家AI公司？",
+                    "source": "iThome",
+                    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5ZMHBsSXFQZGkxT3Y3LV9WZzZKYWQ4TTEta19SWTMtZTJsTU1SMVFWVXZEb0o1c2FoNlZ4YUFha3dNVENVVXc3S0xXdjFGUQ?oc=5",
+                    "score": 2,
+                    "summary": "LINE宣布轉型AI公司，揭示八大AI藍圖。此為LINE高層策略，對ABV即時行銷與會員活動無直接轉化價值。",
+                    "action_tags": [
+                        "社群內容"
+                    ],
+                    "abv_suggestion": "此新聞屬LINE高層策略，ABV短期內難以利用此新聞進行即時行銷或會員活動。若欲在社群跟風，可在Threads或IG發起「你期待AI如何改變餐飲體驗？」等泛用話題討論，但對ABV當前業績或品牌連結助益有限。建議ABV持續關注LINE未來推出具體AI應用服務於商業用戶（B端）時，再評估導入LINE官方帳號或會員系統，以提升個人化體驗或行銷效率。"
+                },
+                {
+                    "sub_tag": "餐飲品牌會員經營",
+                    "title": "ETtoday台灣電子商務發展論壇- 全記錄",
+                    "source": "ETtoday財經雲",
+                    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9oek9OenFKU2hMSkc1dGhDV08wSG5OMElYVzZxOWdYU3NreHZSek9ORGE5N25rX1hPQUlfbUtiSURPV1Q1NkREN25lNWY4dHpM0gFsQVVfeXFMUHJjclJQWGtWcTVSU3RLSTg2SWxOUG1FOFBPUUMxai1Tb1FVTGw4enl1U0k2Mk11YVkwY0NrT1g5Ti16bTVHQ2U1czFORWV5amJLUW5fZlYyc085N1pLVW9SMzZoVmtXLXFJNzlQ?oc=5",
+                    "score": 2,
+                    "summary": "電商論壇記錄，主要聚焦數位行銷與趨勢。對餐飲品牌會員經營與數位策略具參考價值，但缺乏直接顧客轉化點。",
+                    "action_tags": [
+                        "社群內容"
+                    ],
+                    "abv_suggestion": "此新聞對消費者無直接促銷或活動轉化點。ABV社群小編可在FB/IG/LINE發文：『ABV團隊持續關注最新電商趨勢，致力於優化您的數位用餐體驗！從線上預訂、會員點數累積到獨家優惠推播，我們不斷精進，只為讓您在ABV享受更流暢便捷的服務！』強調品牌對數位體驗升級的投入，但此內容預期顧客互動率較低。"
+                }
+            ]
         },
         {
             "id": 6,
@@ -79,8 +243,26 @@
                 "球迷聚餐",
                 "大型賽事即時行銷"
             ],
-            "news_count": 0,
-            "articles": []
+            "news_count": 1,
+            "articles": [
+                {
+                    "sub_tag": "大型賽事即時行銷",
+                    "title": "2026 WBC經典賽台灣贏韓國優惠總整理！各大超商、速食店、手搖飲、餐廳、景點應援好康資訊一次看！(不斷更新)",
+                    "source": "Yahoo新聞",
+                    "url": "https://news.google.com/rss/articles/CBMihgVBVV95cUxQZ1ZPMmlUVFpZRUU2WjNUb3dNQjd4aEduNERaWVpfdmVYMGhrT2hxdFJISW5sYjFZd3hsclhTTGIwSDFOTDRGbGphcXBjd0VCRVdBV3VNZlpVcUhYa0drR01kRHFISGQzSXJ1UkhxeDZNTWZZOWMyR0JXOEw2S0dUZnVMRzF0OVNlSnV4ZVJQVVluYm93dEJQUzFYbTVWa3BsX3lnMF9PZ3VVZThYRUFCOXBCYjJjLVQzSExwZDhjUkF1U2txN3RZSk1FTVFhX0oyZ1BQZFRjRWJ1ZHZramdTRUg1ZTZEdGNlbGdxRGttTnhEdGtyVFVsRFloMjBSbzllRGZOd0JtQzYzbDFHZWFUeUV5QUM1VHIwa1I4T1RrMEstdVo2X1J3UHRCSlZPWkNZR2QwUGxvYzF3YkJYR2VWT0RfeWk5Sm1YTWJLOWVxQzZYVHZkU3lPNXBQZXFJM2J0RER1bXhBaGxaY2ZhWXZuaHl3bk9oeFNxd2ZMdmljQWw5NmtFY2NZV2lKT2piVnZrQmNDaDFJbHNpY2toUHlIU21uZzhvdVZsX2c3eUpUTnFnRERUYlpzQWZjNUVsZGxzTndKSTZSV3F3T1M0Z1NEdmY0RldRay1LM3I4OTFOU2ZObVFnLVVNV3ZaRFRlZTl6WUNPNlVYZnJiOWlvSVNxYUhxZWlubF9zV0cyeTh6RFlKTUNuNVc3TjlLWG5DMDhXeklxdHdtb0dfeURFQ21jck1hZ2pOOWVBaTRlMVJIR1pRU1Itc0d2ejBTd2lKS2JjakRiOHpHYUYxUVVLTGVkNXdKVElfU3psMGRjOXI2VTh5NFlXcFRJQTlmNzhnYUJHMXBzNFdn?oc=5",
+                    "score": 4,
+                    "summary": "2026 WBC台灣勝韓國優惠預告，為ABV規劃未來大型賽事即時行銷、社群互動與門市應援活動提供絕佳前瞻情報，具高戰略規劃價值。",
+                    "action_tags": [
+                        "即時行銷",
+                        "會員活動",
+                        "社群內容",
+                        "廣告素材",
+                        "門市活動",
+                        "品牌合作"
+                    ],
+                    "abv_suggestion": "ABV應立即將2026 WBC賽程列入年度行銷規劃重點。提前策劃「台灣贏韓國」專屬優惠：\n1.  **門市活動**：規劃賽事轉播派對，推出「台灣贏韓國」限定精釀啤酒組合或世界特色小吃（避開牛羊，可考慮韓式炸雞、台式熱炒等）。\n2.  **社群內容**：預熱WBC話題，鼓勵球迷預訂觀賽包廂，發起賽事預測或應援抽獎活動。\n3.  **會員活動**：為會員提供獨家觀賽套餐優惠或預約禮，並於台灣勝韓國後發送電子優惠券刺激再訪。\n4.  **品牌合作**：提早與精釀啤酒品牌洽談聯名，共同推廣WBC主題活動。\n5.  **菜單研發**：針對「台灣贏韓國」情境，研發限定無牛羊的慶祝餐點，如具異國風情的下酒菜。"
+                }
+            ]
         },
         {
             "id": 7,
