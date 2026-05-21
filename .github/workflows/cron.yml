@@ -7,31 +7,45 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - name: 檢查程式碼庫
-      uses: actions/checkout@v3
+    - name: 1. 檢查程式碼庫
+      uses: actions/checkout@v4
 
-    - name: 設定 Python 環境
-      uses: actions/setup-python@v4
+    - name: 2. 設定 Python 環境
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
-    - name: 安裝必要套件
+    - name: 3. 安裝必要套件
       run: |
         pip install requests google-generativeai
 
-    - name: 執行 AI Agent 8大主題重組搜集
+    - name: 4. 執行 AI Agent 8大主題重組搜集
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: python fetch_news.py
 
-    - name: 自動提交並更新網頁數據
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add data/daily_report.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 自動更新今日8大主題餐飲新聞" && git push)
+    - name: 5. 完美對接設定 GitHub Pages
+      uses: actions/configure-pages@v4
+
+    - name: 6. 將網頁與 AI 數據同時打包成包裹
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+    - name: 7. 聯動開通店面 (直接推播發布網頁)
+      id: deployment
+      uses: actions/deploy-pages@v4
