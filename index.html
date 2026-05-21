@@ -122,7 +122,7 @@
         }
 
         // 使用極短的相對路徑讀取，確保任何環境都不會 404
-        fetch('./data/daily_report.json')
+        fetch('daily_report.json')
             .then(res => {
                 if(!res.ok) throw new Error('找不到即時資料');
                 return res.json();
