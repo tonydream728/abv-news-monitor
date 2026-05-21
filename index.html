@@ -33,7 +33,7 @@
             </div>
     </div>
 
-    <script>
+   <script>
         // 1. 完整 8 大核心備用資料 (確保無論如何都不會空白)
         const demoData = {
             "themes": [
@@ -43,7 +43,7 @@
                 {"id": 4, "title": "4. 餐飲會員經濟", "sub_categories": ["會員制度", "點數經濟", "CRM / OMO 案例"], "news_count": 0, "articles": []},
                 {"id": 5, "title": "5. LINE會員與 Ocard", "sub_categories": ["LINE官方帳號", "Ocard會員系統", "推播策略"], "news_count": 0, "articles": []},
                 {"id": 6, "title": "6. 世界盃與大型賽事餐飲話題", "sub_categories": ["世界盃餐廳活動", "運動酒吧", "賽事轉播"], "news_count": 0, "articles": []},
-                {"id": 7, "title": "7. 社群爆紅餐廳與內容趨勢", "sub_categories": ["Threads熱門話題", "TikTok爆紅料理", "IG Reels"], "news_count": 1, "articles": [{"sub_tag": "Threads熱門話題", "title": "Threads 網友熱議：『求台北適合10人以上、不吃牛羊但聚餐氣氛嗨的餐酒館』單篇脆文破萬觸及", "source": "Threads 輿情監測", "score": 5, "summary": "大量脆友在貼文底下尋找多人分享、不吃牛羊的多元菜單與喝酒氛圍餐廳。", "action_tags": ["社群內容", "廣告素材"], "abv_suggestion": "旗下地中海、加勒比海、美式等分店完全外包命中。小編應立刻在該串文底下用官方帳號回覆，並將此不吃牛羊的多人聚餐特色包裝成 Meta 廣告素材。"}]},
+                {"id": 7, "title": "7. 社群爆紅餐廳與內容趨勢", "sub_categories": ["Threads熱門話題", "TikTok爆紅料理", "IG Reels"], "news_count": 1, "articles": [{"sub_tag": "Threads熱門話題", "title": "Threads 網友熱議：『求台北適合10人以上、不吃牛羊但聚餐氣氛嗨的餐酒館』單篇脆文破萬觸及", "source": "Threads 輿情監測", "score": 5, "summary": "大量脆友在貼文底下尋找多人分享、不吃牛羊的多元菜單與喝酒氛圍餐廳。", "action_tags": ["社群內容", "廣告素材"], "abv_suggestion": "旗下地中海、加勒比海、美式等分店完全精準命中。小編應立刻在該串文底下用官方帳號回覆，並將此不吃牛羊的多人聚餐特色包裝成 Meta 廣告素材。"}]},
                 {"id": 8, "title": "8. 餐飲 AI 應用", "sub_categories": ["AI點餐", "AI客服", "AI自動生成社群內容"], "news_count": 0, "articles": []}
             ]
         };
@@ -84,4 +84,33 @@
                                         <h4 class="text-md font-bold text-white hover:underline"><a href="\${art.url}" target="_blank">\${art.title} ↗</a></h4>
                                         <p class="text-sm text-gray-400 leading-relaxed">\${art.summary}</p>
                                         <div class="mt-4 p-4 bg-[#0d1117] rounded-lg border-l-2 border-l-amber-500 border-y border-r border-[#21262d]">
-                                            <div class="flex flex-wrap gap-1.5 mb-2 items
+                                            <div class="flex flex-wrap gap-1.5 mb-2 items-center">
+                                                <span class="text-xs font-bold text-amber-400 mr-1">⚡ 可轉化為：</span>
+                                                \${art.action_tags.map(tag => `<span class="bg-amber-950/60 text-amber-300 text-xs px-2 py-0.5 rounded font-medium border border-amber-500/20">\${tag}</span>`).join('')}
+                                            </div>
+                                            <p class="text-xs text-gray-300 leading-relaxed"><strong class="text-white">實戰行動方針：</strong>\${art.abv_suggestion}</p>
+                                        </div>
+                                    </div>
+                                `).join('') : `<div class="text-center py-6 text-sm text-gray-600">未發現具備 ABV 實戰轉化價值的新聞。</div>`}
+                            </div>
+                        </details>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 3. 先用 Demo 打底，再嘗試非同步讀取最新檔案
+        renderDashboard(demoData);
+        document.getElementById('data-status').innerText = "PREVIEW: 範例數據載入";
+
+        // 同時默默去抓最新生成的報告
+        fetch('daily_report.json')
+            .then(res => { if(res.ok) return res.json(); })
+            .then(liveData => {
+                if(liveData && liveData.themes) {
+                    renderDashboard(liveData);
+                    document.getElementById('data-status').innerText = "LIVE: 雲端即時同步中";
+                }
+            })
+            .catch(err => console.log("等待最新雲端任務覆蓋中"));
+    </script>
