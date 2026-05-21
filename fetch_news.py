@@ -22,7 +22,7 @@ def main():
     today_str = datetime.now().strftime("%Y-%m-%d")
     
     # 讀取現有資料（為了滾動累積歷史新聞）
-    data_filepath = 'data/daily_report.json'
+    data_filepath = 'daily_report.json'
     os.makedirs('data', exist_ok=True)
     
     if os.path.exists(data_filepath):
