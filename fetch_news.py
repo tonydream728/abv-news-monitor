@@ -32,7 +32,7 @@ def main():
             res = requests.get(url, timeout=15)
             if res.status_code == 200:
                 root = ET.fromstring(res.content)
-                for item in root.findall('.//item')[:3]: # 每個大主題取前3則最即時的新聞
+                for item in root.findall('.//item')[:3]: 
                     link = item.find('link').text if item.find('link') is not None else "#"
                     if link in seen_urls: continue
                     seen_urls.add(link)
@@ -47,7 +47,6 @@ def main():
 
     print(f"🧠 AI 特助開始進行『ABV 實戰轉化率』過濾與 8 大主題重組...")
     
-    # 初始化 8 大主題的乾淨結構
     structured_themes = []
     for tid, meta in THEMES.items():
         structured_themes.append({
@@ -58,12 +57,13 @@ def main():
             "articles": []
         })
 
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    # 🎯 這裡已經幫您無縫升級為 Google 最新一代的 gemini-2.5-flash 大腦！
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt_template = """
-    你是一位精通餐飲產業與數位行銷的 AI 戰略特助。請幫我評估以下新聞對於「ABV 餐廳集團（分店包含餐酒館、居酒屋、美式餐廳、韓式烤肉，主打精釀啤酒文化與世界傳統料理，消費者不吃牛羊）」的轉化價值。
+    你是一位精通餐飲產業與數位行銷的 AI 戰略特助。請幫我評估以下新聞對於「ABV 餐廳集團（分店包含餐酒館、居酒屋、美式餐廳、韓式烤肉，主打世界精釀啤酒文化與世界傳統料理，消費者不吃牛羊）」的轉化價值。
     
-    新聞標題: {title}
+    新聞標題: %s
 
     【🎯 核心過濾機制】：
     請嚴格判斷這件事能否被 ABV 用來做「即時行銷、會員活動、社群內容、廣告素材、門市活動、品牌合作或美食季企劃」。
@@ -71,24 +71,23 @@ def main():
     - 如果無法轉化操作或不具備實戰意義，請直接降低評分至 1-2 分。
 
     請嚴格依照 JSON 格式回傳，回傳的字串開頭與結尾絕對不要包含任何 ```json 或 ``` 標籤，只要純 JSON 內容：
-    {{
-        "sub_tag": "從這組子項目中選一個最貼切的：{subs}",
+    {
+        "sub_tag": "從這組子項目中選一個最貼切的：%s",
         "score": 1-5整數,
         "summary": "60字內繁體核心摘要",
         "action_tags": ["從上述即時行銷、門市活動、社群內容、廣告素材、會員活動、品牌合作、美食季企劃中選出符合的"],
         "abv_suggestion": "高價值實戰方針。說明 ABV 門市或社群小編可以怎麼直接照著這則新聞來操作（例如：推出某某票根活動、在 Threads 發起什麼話題、在 Ocard 設定什麼活動，請精準切入）"
-    }}
+    }
     """
 
-    # 每天篩選最關聯的前 12 則主力新聞請 AI 深化剖析
+    # 篩選最關聯的新聞請 AI 深化剖析
     for art in raw_articles[:12]: 
         try:
             tid = art["theme_id"]
             subs_str = ", ".join(THEMES[tid]["sub_categories"])
-            prompt = prompt_template.format(title=art['title'], subs=subs_str)
+            prompt = prompt_template % (art['title'], subs_str)
             
             response = model.generate_content(prompt)
-            # 清理 AI 可能帶出的 markdown 格式
             clean_text = response.text.strip().replace("```json", "").replace("```", "")
             ai_res = json.loads(clean_text)
             
