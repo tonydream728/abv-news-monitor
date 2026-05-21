@@ -3,116 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABV 決策大腦 - 8大核心情報監控</title>
+    <title>ABV 24/7 核心行銷決策大盤</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0d1117; color: #c9d1d9; }
-        .theme-card { background-color: #161b22; border: 1px solid #30363d; }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .toggle-icon { transform: rotate(90deg); color: #f59e0b; }
-        details[open] { background-color: #1f242c; }
+        body { background-color: #0b0f17; color: #c9d1d9; }
+        .section-card { background-color: #161b22; border: 1px solid #30363d; }
+        .inner-item { background-color: #0d1117; border: 1px solid #21262d; }
     </style>
 </head>
-<body class="p-4 md:p-10 font-sans">
+<body class="p-4 md:p-8 font-sans">
 
-    <div class="max-w-6xl mx-auto">
-        <header class="mb-10 border-b border-[#30363d] pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-8 border-b border-[#30363d] pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
-                <h1 class="text-3xl font-bold text-white tracking-wide">ABV 8大核心情報監控</h1>
+                <h1 class="text-3xl font-bold text-white tracking-wide">ABV 24/7 核心行銷決策大盤</h1>
                 <p class="text-sm text-gray-400 mt-1">
-                    🎯 核心過濾原則：若無法轉化為「即時行銷/會員活動/社群內容/廣告素材/門市活動/品牌合作或美食季企劃」，自動調降重要性。
+                    📊 串聯全網餐飲、生活、消費輿情 ➔ 經 Gemini 2.5 戰略大腦即時轉化為 ABV 13家門市實戰行銷與社群彈藥
                 </p>
             </div>
-            <div class="text-xs text-amber-400 bg-amber-950/40 border border-amber-500/30 px-3 py-1.5 rounded-lg font-mono" id="data-status">
-                正在讀取決策情報大腦...
+            <div class="text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-mono font-bold" id="data-status">
+                LIVE: 數據載入中
             </div>
         </header>
 
-        <div class="space-y-4" id="theme-dashboard">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <div class="section-card p-6 rounded-2xl flex flex-col h-[650px]">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-[#21262d]">
+                    <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2">🔥 第一區塊：今日最即時情報</h2>
+                    <span class="text-xs text-gray-500" id="update-time">天天 09:00 自動更新</span>
+                </div>
+                <div class="space-y-4 overflow-y-auto flex-1 pr-2" id="today-news-container">
+                    <div class="text-center py-20 text-gray-500">正在搜集清晨最新情報...</div>
+                </div>
             </div>
+
+            <div class="section-card p-6 rounded-2xl flex flex-col h-[650px]">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-[#21262d]">
+                    <h2 class="text-xl font-bold text-blue-400 flex items-center gap-2">📁 第二區塊：過去 7 天情報存檔</h2>
+                    <span class="text-xs text-gray-400 bg-blue-950 px-2 py-0.5 rounded border border-blue-500/20">動態滾動累積</span>
+                </div>
+                <div class="space-y-4 overflow-y-auto flex-1 pr-2" id="history-news-container">
+                    <div class="text-center py-20 text-gray-500">歷史情報儲藏庫準備中...</div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-2xl flex flex-col h-[600px] lg:col-span-2">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-[#21262d]">
+                    <h2 class="text-xl font-bold text-pink-400 flex items-center gap-2">🎯 第三區塊：即時社群發揮與短線跟進（Threads / IG 實戰腳本）</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto flex-1 pr-2" id="social-actions-container">
+                    <div class="text-center py-20 text-gray-500 col-span-2">AI 正在幫小編撰寫今日貼文跟進彈藥...</div>
+                </div>
+            </div>
+
+            <div class="section-card p-6 rounded-2xl flex flex-col h-[600px] lg:col-span-2">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-[#21262d]">
+                    <h2 class="text-xl font-bold text-purple-400 flex items-center gap-2">🚀 第四區塊：行銷策略與中長期活動企劃延伸（Ocard / 美食季）</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto flex-1 pr-2" id="strategy-container">
+                    <div class="text-center py-20 text-gray-500 col-span-3">AI 戰略大腦正在規劃中長期門市落地企劃...</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <script>
-        // 1. 完整 8 大核心備用資料 (確保無論如何都不會空白)
-        const demoData = {
-            "themes": [
-                {"id": 1, "title": "1. 啤酒節與酒類活動", "sub_categories": ["台灣／海外啤酒節", "精釀啤酒活動", "品飲會", "酒吧活動"], "news_count": 1, "articles": [{"sub_tag": "精釀啤酒活動", "title": "2026 國際精釀啤酒巡迴賽台北站即將開跑", "source": "酒訊雜誌", "score": 5, "summary": "歐洲精釀大廠聯合將於下月在華山舉辦封閉式品飲會，主打高濃度、傳統工藝的修道院與酸啤風格。", "action_tags": ["門市活動", "品牌合作"], "abv_suggestion": "ABV 可主動接洽主辦方爭取「官方指定續攤酒吧」，或在門市同步推出「修道院啤酒對決週」，完美轉化為門市營收。"}]},
-                {"id": 2, "title": "2. 即時行銷議題", "sub_categories": ["節慶話題", "體育賽事", "社群熱門事件"], "news_count": 1, "articles": [{"sub_tag": "體育賽事", "title": "大巨蛋週末台日棒球交流賽，周邊餐廳夜間訂位率已達95%", "source": "東森財經", "score": 5, "summary": "賽事帶動周邊餐飲爆發，球迷傾向尋找有大螢幕觀賽、可高分貝應援的餐酒館聚餐。", "action_tags": ["即時行銷", "門市活動"], "abv_suggestion": "應立刻在 ABV 東區及各分店推播「憑大巨蛋票根享指定點心招待」或「全壘打舉杯同慶」活動，攔截賽後人流。"}]},
-                {"id": 3, "title": "3. 精釀啤酒市場", "sub_categories": ["精釀啤酒 brand 動態", "新酒款上市", "酒廠合作"], "news_count": 0, "articles": []},
-                {"id": 4, "title": "4. 餐飲會員經濟", "sub_categories": ["會員制度", "點數經濟", "CRM / OMO 案例"], "news_count": 0, "articles": []},
-                {"id": 5, "title": "5. LINE會員與 Ocard", "sub_categories": ["LINE官方帳號", "Ocard會員系統", "推播策略"], "news_count": 0, "articles": []},
-                {"id": 6, "title": "6. 世界盃與大型賽事餐飲話題", "sub_categories": ["世界盃餐廳活動", "運動酒吧", "賽事轉播"], "news_count": 0, "articles": []},
-                {"id": 7, "title": "7. 社群爆紅餐廳與內容趨勢", "sub_categories": ["Threads熱門話題", "TikTok爆紅料理", "IG Reels"], "news_count": 1, "articles": [{"sub_tag": "Threads熱門話題", "title": "Threads 網友熱議：『求台北適合10人以上、不吃牛羊但聚餐氣氛嗨的餐酒館』單篇脆文破萬觸及", "source": "Threads 輿情監測", "score": 5, "summary": "大量脆友在貼文底下尋找多人分享、不吃牛羊的多元菜單與喝酒氛圍餐廳。", "action_tags": ["社群內容", "廣告素材"], "abv_suggestion": "旗下地中海、加勒比海、美式等分店完全精準命中。小編應立刻在該串文底下用官方帳號回覆，並將此不吃牛羊的多人聚餐特色包裝成 Meta 廣告素材。"}]},
-                {"id": 8, "title": "8. 餐飲 AI 應用", "sub_categories": ["AI點餐", "AI客服", "AI自動生成社群內容"], "news_count": 0, "articles": []}
-            ]
-        };
+        // 核心網頁渲染引擎
+        function updateDashboard(data) {
+            if(data.last_updated) {
+                document.getElementById('update-time').innerText = `更新時間: ${data.last_updated}`;
+            }
 
-        // 2. 渲染核心 (已經全面移除錯誤的反斜線 \ )
-        function renderDashboard(data) {
-            const container = document.getElementById('theme-dashboard');
-            container.innerHTML = data.themes.map(theme => {
-                const hasNews = theme.articles && theme.articles.length > 0;
-                return `
-                    <div class="theme-card rounded-xl overflow-hidden transition duration-200 hover:border-gray-600">
-                        <details class="w-full">
-                            <summary class="p-5 flex justify-between items-center cursor-pointer select-none bg-[#161b22] hover:bg-[#1f242c]">
-                                <div class="flex items-center gap-3">
-                                    <svg class="toggle-icon w-5 h-5 text-gray-400 transition-transform duration-200 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                    <h3 class="text-lg font-bold text-white">${theme.title}</h3>
-                                </div>
-                                <div>
-                                    ${hasNews 
-                                        ? `<span class="bg-amber-950 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-bold">● 今日 ${theme.news_count} 則關鍵情報</span>`
-                                        : `<span class="text-gray-600 text-xs">今日暫無高價值情報</span>`
-                                    }
-                                </div>
-                            </summary>
-                            <div class="p-5 border-t border-[#30363d] bg-[#0d1117]/60 space-y-4">
-                                <div class="flex flex-wrap gap-1.5 pb-2 border-b border-[#21262d]">
-                                    <span class="text-xs text-gray-500 mr-2 py-0.5">監控細項：</span>
-                                    ${theme.sub_categories.map(sub => `<span class="bg-[#161b22] text-gray-400 text-xs px-2 py-0.5 rounded border border-[#30363d]">${sub}</span>`).join('')}
-                                </div>
-                                ${hasNews ? theme.articles.map(art => `
-                                    <div class="bg-[#161b22] border border-[#30363d] p-5 rounded-xl space-y-3">
-                                        <div class="flex flex-wrap justify-between items-start gap-2">
-                                            <span class="bg-blue-950 text-blue-300 text-xs px-2.5 py-0.5 rounded border border-blue-500/20 font-bold"># ${art.sub_tag}</span>
-                                            <span class="text-xs text-amber-400">決策優先度：★ ${art.score}</span>
-                                        </div>
-                                        <h4 class="text-md font-bold text-white hover:underline"><a href="${art.url}" target="_blank">${art.title} ↗</a></h4>
-                                        <p class="text-sm text-gray-400 leading-relaxed">${art.summary}</p>
-                                        <div class="mt-4 p-4 bg-[#0d1117] rounded-lg border-l-2 border-l-amber-500 border-y border-r border-[#21262d]">
-                                            <div class="flex flex-wrap gap-1.5 mb-2 items-center">
-                                                <span class="text-xs font-bold text-amber-400 mr-1">⚡ 可轉化為：</span>
-                                                ${art.action_tags.map(tag => `<span class="bg-amber-950/60 text-amber-300 text-xs px-2 py-0.5 rounded font-medium border border-amber-500/20">${tag}</span>`).join('')}
-                                            </div>
-                                            <p class="text-xs text-gray-300 leading-relaxed"><strong class="text-white">實戰行動方針：</strong>${art.abv_suggestion}</p>
-                                        </div>
-                                    </div>
-                                `).join('') : `<div class="text-center py-6 text-sm text-gray-600">未發現具備 ABV 實戰轉化價值的新聞。</div>`}
-                            </div>
-                        </details>
+            // 1. 渲染第一區塊（今日新聞）
+            const todayContainer = document.getElementById('today-news-container');
+            if(data.today_news && data.today_news.length > 0) {
+                todayContainer.innerHTML = data.today_news.map(art => `
+                    <div class="inner-item p-4 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-400">${art.source}</span>
+                            <span class="text-amber-400 font-bold">優先度: ★ ${art.score}</span>
+                        </div>
+                        <h3 class="font-bold text-white text-md hover:underline"><a href="${art.url}" target="_blank">${art.title} ↗</a></h3>
+                        <p class="text-xs text-gray-400">${art.summary}</p>
+                        <div class="mt-2 p-3 bg-amber-950/20 rounded border border-amber-500/20 text-xs">
+                            <strong class="text-amber-400">ABV 實戰方針：</strong>${art.abv_suggestion}
+                        </div>
                     </div>
-                `;
-            }).join('');
+                `).join('');
+            } else {
+                todayContainer.innerHTML = `<div class="text-center py-10 text-gray-500">今日暫無新情報輸入</div>`;
+            }
+
+            // 2. 渲染第二區塊（過去7天新聞）
+            const historyContainer = document.getElementById('history-news-container');
+            if(data.history_news && data.history_news.length > 0) {
+                historyContainer.innerHTML = data.history_news.map(art => `
+                    <div class="inner-item p-4 rounded-xl space-y-1">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-gray-500">${art.source} • ${art.date || ''}</span>
+                            <span class="text-blue-400">★ ${art.score}</span>
+                        </div>
+                        <h3 class="font-medium text-gray-200 text-sm hover:underline"><a href="${art.url}" target="_blank">${art.title} ↗</a></h3>
+                        <p class="text-xs text-gray-400">${art.summary}</p>
+                    </div>
+                `).join('');
+            } else {
+                historyContainer.innerHTML = `<div class="text-center py-10 text-gray-500">歷史儲藏庫暫無累積資料</div>`;
+            }
+
+            // 3. 渲染第三區塊（社群貼文腳本）
+            const socialContainer = document.getElementById('social-actions-container');
+            if(data.social_actions && data.social_actions.length > 0) {
+                socialContainer.innerHTML = data.social_actions.map(act => `
+                    <div class="inner-item p-4 rounded-xl space-y-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-pink-950 text-pink-400 text-xs px-2 py-0.5 rounded border border-pink-500/20 font-bold"># ${act.target_platform}</span>
+                                <span class="text-xs text-gray-400">${act.related_topic}</span>
+                            </div>
+                            <p class="text-xs text-gray-300 font-semibold mb-2">💡 切入視角：${act.copywriting_angle}</p>
+                            <div class="bg-black/40 p-3 rounded border border-gray-800 text-xs text-gray-300 whitespace-pre-wrap font-mono select-all" title="點擊可全選複製">${act.action_script}</div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                socialContainer.innerHTML = `<div class="text-center py-10 text-gray-500 col-span-2">暫無今日社群推薦彈藥</div>`;
+            }
+
+            // 4. 渲染第四區塊（中長期策略）
+            const strategyContainer = document.getElementById('strategy-container');
+            if(data.marketing_strategies && data.marketing_strategies.length > 0) {
+                strategyContainer.innerHTML = data.marketing_strategies.map(strat => `
+                    <div class="inner-item p-4 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <span class="bg-purple-950 text-purple-300 text-xs px-2 py-0.5 rounded border border-purple-500/20 font-medium block w-max mb-2">${strat.type}</span>
+                            <h3 class="font-bold text-white text-md mb-1">${strat.strategy_title}</h3>
+                            <p class="text-xs text-gray-400 mb-3">🎯 受眾：${strat.target_audience}</p>
+                            <p class="text-xs text-gray-300 leading-relaxed bg-[#161b22] p-3 rounded border border-gray-800">${strat.execution_plan}</p>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                strategyContainer.innerHTML = `<div class="text-center py-10 text-gray-500 col-span-3">暫無中長期企劃推薦</div>`;
+            }
         }
 
-        // 3. 先用範例資料渲染出漂亮的卡片底座
-        renderDashboard(demoData);
-        document.getElementById('data-status').innerText = "PREVIEW: 範例數據載入";
-
-        // 同時默默去讀取最新生成的 JSON 檔案
+        // 讀取一條龍產出的即時 JSON
         fetch('daily_report.json')
-            .then(res => { if(res.ok) return res.json(); })
-            .then(liveData => {
-                if(liveData && liveData.themes) {
-                    renderDashboard(liveData);
-                    document.getElementById('data-status').innerText = "LIVE: 雲端即時同步中";
-                }
+            .then(res => {
+                if(!res.ok) throw new Error();
+                return res.json();
             })
-            .catch(err => console.log("等待最新雲端任務覆蓋中"));
+            .then(data => {
+                document.getElementById('data-status').innerText = "LIVE: 決策大盤已同步";
+                document.getElementById('data-status').className = "text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-mono font-bold";
+                updateDashboard(data);
+            })
+            .catch(err => {
+                document.getElementById('data-status').innerText = "ERROR: 等待第一次自動化生成";
+                document.getElementById('data-status').className = "text-xs text-rose-400 bg-rose-950/40 border border-rose-500/30 px-3 py-1.5 rounded-lg font-mono font-bold";
+            });
     </script>
 </body>
 </html>
