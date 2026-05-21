@@ -33,13 +33,13 @@
             </div>
     </div>
 
-   <script>
+    <script>
         // 1. 完整 8 大核心備用資料 (確保無論如何都不會空白)
         const demoData = {
             "themes": [
                 {"id": 1, "title": "1. 啤酒節與酒類活動", "sub_categories": ["台灣／海外啤酒節", "精釀啤酒活動", "品飲會", "酒吧活動"], "news_count": 1, "articles": [{"sub_tag": "精釀啤酒活動", "title": "2026 國際精釀啤酒巡迴賽台北站即將開跑", "source": "酒訊雜誌", "score": 5, "summary": "歐洲精釀大廠聯合將於下月在華山舉辦封閉式品飲會，主打高濃度、傳統工藝的修道院與酸啤風格。", "action_tags": ["門市活動", "品牌合作"], "abv_suggestion": "ABV 可主動接洽主辦方爭取「官方指定續攤酒吧」，或在門市同步推出「修道院啤酒對決週」，完美轉化為門市營收。"}]},
                 {"id": 2, "title": "2. 即時行銷議題", "sub_categories": ["節慶話題", "體育賽事", "社群熱門事件"], "news_count": 1, "articles": [{"sub_tag": "體育賽事", "title": "大巨蛋週末台日棒球交流賽，周邊餐廳夜間訂位率已達95%", "source": "東森財經", "score": 5, "summary": "賽事帶動周邊餐飲爆發，球迷傾向尋找有大螢幕觀賽、可高分貝應援的餐酒館聚餐。", "action_tags": ["即時行銷", "門市活動"], "abv_suggestion": "應立刻在 ABV 東區及各分店推播「憑大巨蛋票根享指定點心招待」或「全壘打舉杯同慶」活動，攔截賽後人流。"}]},
-                {"id": 3, "title": "3. 精釀啤酒市場", "sub_categories": ["精釀啤酒品牌動態", "新酒款上市", "酒廠合作"], "news_count": 0, "articles": []},
+                {"id": 3, "title": "3. 精釀啤酒市場", "sub_categories": ["精釀啤酒 brand 動態", "新酒款上市", "酒廠合作"], "news_count": 0, "articles": []},
                 {"id": 4, "title": "4. 餐飲會員經濟", "sub_categories": ["會員制度", "點數經濟", "CRM / OMO 案例"], "news_count": 0, "articles": []},
                 {"id": 5, "title": "5. LINE會員與 Ocard", "sub_categories": ["LINE官方帳號", "Ocard會員系統", "推播策略"], "news_count": 0, "articles": []},
                 {"id": 6, "title": "6. 世界盃與大型賽事餐飲話題", "sub_categories": ["世界盃餐廳活動", "運動酒吧", "賽事轉播"], "news_count": 0, "articles": []},
@@ -48,7 +48,7 @@
             ]
         };
 
-        // 2. 渲染核心
+        // 2. 渲染核心 (已經全面移除錯誤的反斜線 \ )
         function renderDashboard(data) {
             const container = document.getElementById('theme-dashboard');
             container.innerHTML = data.themes.map(theme => {
@@ -61,11 +61,11 @@
                                     <svg class="toggle-icon w-5 h-5 text-gray-400 transition-transform duration-200 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                                     </svg>
-                                    <h3 class="text-lg font-bold text-white">\${theme.title}</h3>
+                                    <h3 class="text-lg font-bold text-white">${theme.title}</h3>
                                 </div>
                                 <div>
-                                    \${hasNews 
-                                        ? `<span class="bg-amber-950 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-bold">● 今日 \${theme.news_count} 則關鍵情報</span>`
+                                    ${hasNews 
+                                        ? `<span class="bg-amber-950 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-bold">● 今日 ${theme.news_count} 則關鍵情報</span>`
                                         : `<span class="text-gray-600 text-xs">今日暫無高價值情報</span>`
                                     }
                                 </div>
@@ -73,22 +73,22 @@
                             <div class="p-5 border-t border-[#30363d] bg-[#0d1117]/60 space-y-4">
                                 <div class="flex flex-wrap gap-1.5 pb-2 border-b border-[#21262d]">
                                     <span class="text-xs text-gray-500 mr-2 py-0.5">監控細項：</span>
-                                    \${theme.sub_categories.map(sub => `<span class="bg-[#161b22] text-gray-400 text-xs px-2 py-0.5 rounded border border-[#30363d]">\${sub}</span>`).join('')}
+                                    ${theme.sub_categories.map(sub => `<span class="bg-[#161b22] text-gray-400 text-xs px-2 py-0.5 rounded border border-[#30363d]">${sub}</span>`).join('')}
                                 </div>
-                                \${hasNews ? theme.articles.map(art => `
+                                ${hasNews ? theme.articles.map(art => `
                                     <div class="bg-[#161b22] border border-[#30363d] p-5 rounded-xl space-y-3">
                                         <div class="flex flex-wrap justify-between items-start gap-2">
-                                            <span class="bg-blue-950 text-blue-300 text-xs px-2.5 py-0.5 rounded border border-blue-500/20 font-bold"># \${art.sub_tag}</span>
-                                            <span class="text-xs text-amber-400">決策優先度：★ \${art.score}</span>
+                                            <span class="bg-blue-950 text-blue-300 text-xs px-2.5 py-0.5 rounded border border-blue-500/20 font-bold"># ${art.sub_tag}</span>
+                                            <span class="text-xs text-amber-400">決策優先度：★ ${art.score}</span>
                                         </div>
-                                        <h4 class="text-md font-bold text-white hover:underline"><a href="\${art.url}" target="_blank">\${art.title} ↗</a></h4>
-                                        <p class="text-sm text-gray-400 leading-relaxed">\${art.summary}</p>
+                                        <h4 class="text-md font-bold text-white hover:underline"><a href="${art.url}" target="_blank">${art.title} ↗</a></h4>
+                                        <p class="text-sm text-gray-400 leading-relaxed">${art.summary}</p>
                                         <div class="mt-4 p-4 bg-[#0d1117] rounded-lg border-l-2 border-l-amber-500 border-y border-r border-[#21262d]">
                                             <div class="flex flex-wrap gap-1.5 mb-2 items-center">
                                                 <span class="text-xs font-bold text-amber-400 mr-1">⚡ 可轉化為：</span>
-                                                \${art.action_tags.map(tag => `<span class="bg-amber-950/60 text-amber-300 text-xs px-2 py-0.5 rounded font-medium border border-amber-500/20">\${tag}</span>`).join('')}
+                                                ${art.action_tags.map(tag => `<span class="bg-amber-950/60 text-amber-300 text-xs px-2 py-0.5 rounded font-medium border border-amber-500/20">${tag}</span>`).join('')}
                                             </div>
-                                            <p class="text-xs text-gray-300 leading-relaxed"><strong class="text-white">實戰行動方針：</strong>\${art.abv_suggestion}</p>
+                                            <p class="text-xs text-gray-300 leading-relaxed"><strong class="text-white">實戰行動方針：</strong>${art.abv_suggestion}</p>
                                         </div>
                                     </div>
                                 `).join('') : `<div class="text-center py-6 text-sm text-gray-600">未發現具備 ABV 實戰轉化價值的新聞。</div>`}
@@ -99,11 +99,11 @@
             }).join('');
         }
 
-        // 3. 先用 Demo 打底，再嘗試非同步讀取最新檔案
+        // 3. 先用範例資料渲染出漂亮的卡片底座
         renderDashboard(demoData);
         document.getElementById('data-status').innerText = "PREVIEW: 範例數據載入";
 
-        // 同時默默去抓最新生成的報告
+        // 同時默默去讀取最新生成的 JSON 檔案
         fetch('daily_report.json')
             .then(res => { if(res.ok) return res.json(); })
             .then(liveData => {
@@ -114,3 +114,5 @@
             })
             .catch(err => console.log("等待最新雲端任務覆蓋中"));
     </script>
+</body>
+</html>
