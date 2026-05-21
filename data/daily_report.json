@@ -1,0 +1,114 @@
+{
+    "themes": [
+        {
+            "id": 1,
+            "title": "1. 啤酒節與酒類活動",
+            "sub_categories": [
+                "台灣／海外啤酒節",
+                "精釀啤酒活動",
+                "品飲會",
+                "酒吧活動",
+                "啤酒品牌聯名",
+                "餐廳與酒類合作"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 2,
+            "title": "2. 即時行銷議題",
+            "sub_categories": [
+                "節慶話題",
+                "體育賽事",
+                "社群熱門事件",
+                "地區型活動",
+                "旅遊／美食新聞",
+                "可轉化為餐廳活動的話題"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 3,
+            "title": "3. 精釀啤酒市場",
+            "sub_categories": [
+                "精釀啤酒品牌動態",
+                "新酒款上市",
+                "酒廠合作",
+                "啤酒風味趨勢",
+                "消費者喝酒習慣"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 4,
+            "title": "4. 餐飲會員經濟",
+            "sub_categories": [
+                "會員制度",
+                "點數經濟",
+                "訂閱制",
+                "生日禮",
+                "集點活動",
+                "CRM / OMO 案例"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 5,
+            "title": "5. LINE會員與 Ocard",
+            "sub_categories": [
+                "LINE官方帳號",
+                "Ocard會員系統",
+                "餐飲品牌會員經營",
+                "推播策略",
+                "會員導流案例"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 6,
+            "title": "6. 世界盃與大型賽事餐飲話題",
+            "sub_categories": [
+                "世界盃餐廳活動",
+                "運動酒吧",
+                "賽事轉播",
+                "票根活動",
+                "球迷聚餐",
+                "大型賽事即時行銷"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 7,
+            "title": "7. 社群爆紅餐廳與內容趨勢",
+            "sub_categories": [
+                "Threads熱門餐廳話題",
+                "TikTok爆紅料理",
+                "IG Reels餐飲內容",
+                "YouTube Shorts美食影片",
+                "KOL / 部落客合作案例"
+            ],
+            "news_count": 0,
+            "articles": []
+        },
+        {
+            "id": 8,
+            "title": "8. 餐飲 AI 應用",
+            "sub_categories": [
+                "AI點餐",
+                "AI客服",
+                "AI會員分眾",
+                "AI廣告投放",
+                "AI菜單分析",
+                "AI自動生成社群內容",
+                "餐飲業自動化工具"
+            ],
+            "news_count": 0,
+            "articles": []
+        }
+    ]
+}
