@@ -1,10 +1,10 @@
-name: 24/7 餐飲業新聞自動監控
+name: 24/7 ABV 8大主題新聞自動監控
 
 on:
   schedule:
     # 每天台灣時間上午 09:00 自動執行 (UTC 01:00)
     - cron: '0 1 * * *'
-  workflow_dispatch: # 允許您隨時點擊按鈕手動強制更新
+  workflow_dispatch: # 允許手動點擊按鈕強制更新
 
 permissions:
   contents: write
@@ -23,14 +23,16 @@ jobs:
 
     - name: 安裝必要套件
       run: |
-        pip install requests
+        pip install requests google-generativeai
 
-    - name: 執行 AI Agent 新聞搜集
+    - name: 執行 AI Agent 8大主題重組搜集
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: python fetch_news.py
 
-    - name: 自動提交並推送到分支
+    - name: 自動提交並更新網頁數據
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add news.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "自動更新今日餐飲新聞" && git push)
+        git add data/daily_report.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 自動更新今日8大主題餐飲新聞" && git push)
